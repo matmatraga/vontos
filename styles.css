@@ -148,6 +148,8 @@ nav {
   z-index: 1;
 }
 
+
+
 .collage-images img {
   padding-bottom: 120px;
 }
@@ -178,39 +180,103 @@ nav {
 
 @media (max-width: 768px) {
   .image-1 {
-    top: auto;
+    top: calc(90% - 160px);
     bottom: 30px;
-    height: 263px;
-    width: 187px;
+    height: 320px;
+    width: 150px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-10%);
     z-index: 3;
   }
 
   .image-2 {
-    top: calc(50% - 282px);
-    transform: translateX(0%);
-    height: 294px;
+    top: calc(50% - 80px);
+    transform: translateX(5%);
+    height: 370px;
     width: 197px;
     z-index: 2;
   }
 
   .image-3 {
-    top: 50px;
-    transform: translateX(0%);
-    height: 267px;
-    width: 197px;
+    top: calc(50% - 200px);
+    transform: translateX(61%);
+    height: 250px;
+    width: 198px;
     z-index: 1;
+    margin-bottom: 20px;
   }
 
   .shop-now {
-    position: absolute;
+    top: calc(50%);
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-40%);
     z-index: 4;
+    white-space: nowrap;
+  }
+
+
+  .navbar-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 10;
+    text-align: left;
+    padding: 10px;
+    display: none;
+  }
+
+  .navbar-toggler {
+    order: -1;
+    position: relative;
+    z-index: 11;
+  }
+
+  .navbar-toggler:focus {
+    outline: none;
+  }
+
+  .navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    content: "";
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 0;
+  }
+
+  .input-group {
+    margin-bottom: 10px;
+  }
+
+  .navbar-nav:last-child {
+    margin-left: auto;
+  }
+
+  .navbar-toggler[aria-expanded="true"]~.navbar-collapse {
+    display: block;
   }
 }
+
 
 
 .categories {
@@ -283,13 +349,29 @@ nav {
   }
 
   .button-container {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .button-container .btn-shop-now {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color: #E4E4E4;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
 
   .category-text {
     display: none;
   }
 }
+
 
 
 .sale {
@@ -370,28 +452,41 @@ nav {
 }
 
 @media (max-width: 768px) {
-  .sale-announcement p {
-    text-align: center;
+  .sale-announcement p:not(:first-child) {
+    display: none;
+  }
+
+  .sale {
+    height: auto;
+    padding-bottom: 60px;
   }
 
   .sale-container-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .sale-container {
-    flex-basis: 45%;
-    margin: 10px;
+    flex-basis: 50%;
+    max-width: 50%;
+    margin-bottom: 200px;
+    height: 300px;
+    width: 204.711px;
+    position: relative;
+  }
+
+  .sale-badge {
+    top: 25px;
+    right: -75px;
   }
 
   .btn-more {
-    margin-top: 20px;
-    margin-right: auto;
-    margin-left: auto;
+    display: none;
   }
 }
+
 
 .footer {
   display: flex;
@@ -483,28 +578,24 @@ nav {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     background-color: #EBEAE8;
     padding: 0;
     margin: 0;
-  }
-
-  .footer .logo {
-    margin-left: 10px;
   }
 
   .footer-left,
   .footer-center,
   .footer-right,
   .footer-more {
-    text-align: center;
+    margin-left: 25px;
   }
 
   .footer-left .contact-info {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
   }
 
   .footer-left .contact-info i {
@@ -515,5 +606,11 @@ nav {
   .footer-left span {
     display: block;
     word-wrap: break-word;
+  }
+
+  .footer-center ul li,
+  .footer-right ul li,
+  .footer-more ul li {
+    display: none;
   }
 }
